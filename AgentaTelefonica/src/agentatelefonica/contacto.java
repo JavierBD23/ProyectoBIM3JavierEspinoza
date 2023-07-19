@@ -18,4 +18,6 @@ public class contacto {
         return this.numero;
     }
 }
-
+ public String verDomicilio(){
+        return this.domicilio;
+    }

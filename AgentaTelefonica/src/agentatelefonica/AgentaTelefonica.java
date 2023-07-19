@@ -65,9 +65,39 @@ public class AgentaTelefonica {
             contador++;
         }
     }
- }
-        
-         
+ 
+ }else{
+   Scanner entrada = new Scanner(System.in);
+            System.out.println("-------Nuevo Contacto-------");
+            System.out.println("-Ingrese el nombre del contacto");
+            String nombre = entrada.nextLine();
+            System.out.println("-Ingrese el numero");
+              String numero = entrada.nextLine();
+            System.out.println("-Ingrese el domicilio");
+            String domicilio = entrada.nextLine();
+            misContactos[contador] = new Contactos(nombre, numero, domicilio);
+            contador++;
+            System.out.println("Contactos Guardados: " + contador);
+}
+}
+
+static public String verContacto(String nombre) {
+        int posicion = -1;
+        for (int i = 0; i < 15; i++) {
+            if (misContactos [i] != null) {
+                if (misContactos[i].verNombre().equals(nombre)) {
+                    posicion = i;
+                    break;
+
+      }
+            }
+        }
+        if (posicion != -1) {
+            return "Contacto numero: " + (contador-1) +"\nNumero: " + misContactos[posicion].verNumero() + "\nDomicilio: " + misContactos[posicion].verDomicilio();
+        } else {
+            return "Contacto no encontrado";
+        }
+    }                
     
     
 
